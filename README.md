@@ -1,5 +1,5 @@
 # GitProfile
-    GitProfile é um aplicativo iOS que permite buscar perfis do GitHub e visualizar seus repositórios públicos. O aplicativo exibe informações como nome do usuário, linguagem utilizada nos repositórios e avatar do perfil.
+GitProfile é um aplicativo iOS que permite buscar perfis do GitHub e visualizar seus repositórios públicos. O aplicativo exibe informações como nome do usuário, linguagem utilizada nos repositórios e avatar do perfil.
 
 # Funcionalidades
     Busca de usuários do GitHub: Pesquise por usuários do GitHub utilizando seus nomes de usuário.
