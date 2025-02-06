@@ -20,9 +20,9 @@ protocol HomeViewModelProtocol {
 class HomeViewModel: HomeViewModelProtocol {
     
     weak var delegate: HomeViewModelDelegate?
-    private let gitHubService: GitHubService
+    private let gitHubService: GitHubServiceProtocol
     
-    init(gitHubService: GitHubService) {
+    init(gitHubService: GitHubServiceProtocol) {
         self.gitHubService = gitHubService
     }
     
@@ -35,7 +35,8 @@ class HomeViewModel: HomeViewModelProtocol {
         }
         
         gitHubService.fetchRepositories(for: trimmedUsername) { result in
-            DispatchQueue.main.async {
+            DispatchQueue.main.async {[weak self] in
+                guard let self else {return}
                 switch result {
                 case .success(let repos):
                     if repos.isEmpty {

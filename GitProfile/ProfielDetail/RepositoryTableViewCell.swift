@@ -16,7 +16,7 @@ class RepositoryTableViewCell: UITableViewCell {
         didSet {
             guard let rep else { return }
             repositoryLabel.text = rep.name
-            languageLabel.text = rep.language ?? "Nenhuma"
+            languageLabel.text = rep.language ?? "Sem informação"
         }
     }
 }

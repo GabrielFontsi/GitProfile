@@ -11,11 +11,10 @@ import Kingfisher
 class ProfileDetailViewController: UIViewController {
     
     var repositories: [Repository] = []
-    var informationRepository: [Repository]?
     
     init(repository: [Repository]) {
         
-        self.informationRepository = repository
+        self.repositories = repository
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -31,15 +30,14 @@ class ProfileDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.fetchRepository()
+        self.setProfileDetail()
         self.profileDetailScreen.configTableViewDelegate(delegate: self, dataSource: self)
     }
     
-    func fetchRepository(){
-        guard let repository = informationRepository else {return}
-        self.profileDetailScreen.usernameLabel.text = repository.first?.owner.login
+    func setProfileDetail(){
+        self.profileDetailScreen.usernameLabel.text = repositories.first?.owner.login
         
-        if let avatarUrl = repository.first?.owner.avatarUrl, let url = URL(string: avatarUrl) {
+        if let avatarUrl = repositories.first?.owner.avatarUrl, let url = URL(string: avatarUrl) {
             self.profileDetailScreen.profileImageView.kf.setImage(with: url)
         }
     }
@@ -47,12 +45,12 @@ class ProfileDetailViewController: UIViewController {
 
 extension ProfileDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return informationRepository?.count ?? 0
+        return repositories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: RepositoryTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-        let repository = informationRepository?[indexPath.row]
+        let repository = repositories[indexPath.row]
         cell.rep = repository
         cell.selectionStyle = .none
         return cell

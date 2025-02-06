@@ -10,14 +10,14 @@ import UIKit
 class HomeViewController: UIViewController {
     
     private var homeScreen = HomeScreen()
-    private var viewModel: HomeViewModel
+    private var viewModel: HomeViewModelProtocol
     
     var repository = [Repository]()
     
-    init(viewModel: HomeViewModel) {
+    init(viewModel: HomeViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        viewModel.delegate = self
+        self.viewModel.delegate = self
     }
     
     required init?(coder: NSCoder) {
