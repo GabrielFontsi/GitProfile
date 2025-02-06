@@ -35,8 +35,9 @@ class HomeViewModel: HomeViewModelProtocol {
         }
         
         gitHubService.fetchRepositories(for: trimmedUsername) { result in
-            DispatchQueue.main.async {[weak self] in
-                guard let self else {return}
+            DispatchQueue.main.async { [weak self] in
+                guard let self else { return }
+                
                 switch result {
                 case .success(let repos):
                     if repos.isEmpty {
@@ -44,8 +45,15 @@ class HomeViewModel: HomeViewModelProtocol {
                     } else {
                         self.delegate?.didFetchRepository(repos)
                     }
-                case .failure:
-                    self.delegate?.showAlert(title: "Atenção", message: "Erro ao buscar o perfil. Tente novamente.")
+                    
+                case .failure(let error):
+                    print("Erro capturado: \(error.localizedDescription)")
+                    
+                    if let afError = error.asAFError, afError.isSessionTaskError {
+                        self.delegate?.showAlert(title: "Erro de conexão", message: "Sem conexão com a internet. Verifique sua rede e tente novamente.")
+                    } else {
+                        self.delegate?.showAlert(title: "Atenção", message: "Erro ao buscar o perfil. Tente novamente.")
+                    }
                 }
             }
         }
