@@ -22,6 +22,7 @@
 		33A9BE742D53F95D007EB7E3 /* TableView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A9BE732D53F95D007EB7E3 /* TableView + Extension.swift */; };
 		33A9BE7B2D54095E007EB7E3 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A9BE792D54095E007EB7E3 /* RepositoryTableViewCell.swift */; };
 		33A9BE7C2D54095E007EB7E3 /* RepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33A9BE7A2D54095E007EB7E3 /* RepositoryTableViewCell.xib */; };
+		33BAAA932D553D7800628669 /* Uiview + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BAAA922D553D7800628669 /* Uiview + Extension.swift */; };
 		BDDE683E6FBCAF88115413F9 /* Pods_GitProfile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1335FA2BAE5EEA136CB59E2 /* Pods_GitProfile.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		33A9BE732D53F95D007EB7E3 /* TableView + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableView + Extension.swift"; sourceTree = "<group>"; };
 		33A9BE792D54095E007EB7E3 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		33A9BE7A2D54095E007EB7E3 /* RepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryTableViewCell.xib; sourceTree = "<group>"; };
+		33BAAA922D553D7800628669 /* Uiview + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uiview + Extension.swift"; sourceTree = "<group>"; };
 		3A6BCFFB5398B598779096C4 /* Pods-GitProfile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitProfile.debug.xcconfig"; path = "Target Support Files/Pods-GitProfile/Pods-GitProfile.debug.xcconfig"; sourceTree = "<group>"; };
 		91DC0E717BB88CE99570E48F /* Pods-GitProfile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitProfile.release.xcconfig"; path = "Target Support Files/Pods-GitProfile/Pods-GitProfile.release.xcconfig"; sourceTree = "<group>"; };
 		C1335FA2BAE5EEA136CB59E2 /* Pods_GitProfile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitProfile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +131,7 @@
 			children = (
 				33A9BE712D53F268007EB7E3 /* Alert + Extension.swift */,
 				33A9BE732D53F95D007EB7E3 /* TableView + Extension.swift */,
+				33BAAA922D553D7800628669 /* Uiview + Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				33A9BE6B2D53E60A007EB7E3 /* Repository.swift in Sources */,
 				33A9BE742D53F95D007EB7E3 /* TableView + Extension.swift in Sources */,
 				33A9BE682D53D756007EB7E3 /* ProfileDetailScreen.swift in Sources */,
+				33BAAA932D553D7800628669 /* Uiview + Extension.swift in Sources */,
 				33A9BE502D53D5E5007EB7E3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

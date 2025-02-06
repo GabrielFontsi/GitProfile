@@ -41,6 +41,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController: HomeScreenProtocol {
     func actionSearchButton() {
         guard let username = homeScreen.usernameTextField.text else { return }
+        view.lock()
         viewModel.fetchRepository(username: username)
     }
 }
@@ -57,6 +58,7 @@ extension HomeViewController: HomeViewModelDelegate {
     }
     
     func didFetchRepository(_ repository: [Repository]) {
+        view.unlock()
         let profileVC = ProfileDetailViewController(repository: repository)
         self.navigationController?.pushViewController(profileVC, animated: true)
     }
