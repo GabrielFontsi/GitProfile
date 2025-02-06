@@ -61,6 +61,5 @@ extension HomeViewController: HomeViewModelDelegate {
         self.navigationController?.pushViewController(profileVC, animated: true)
     }
     
-    
 }
 

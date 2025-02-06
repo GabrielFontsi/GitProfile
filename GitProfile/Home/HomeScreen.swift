@@ -25,7 +25,7 @@ class HomeScreen: UIView {
         tf.layer.borderWidth = 1
         tf.backgroundColor = .systemGray6
         tf.layer.borderColor = UIColor.lightGray.cgColor
-        tf.textColor = .systemGray3
+        tf.textColor = .lightGray
         tf.clipsToBounds = true
         tf.layer.cornerRadius = 8
         tf.placeholder = " Username"
@@ -85,5 +85,4 @@ class HomeScreen: UIView {
             self.searchButton.heightAnchor.constraint(equalToConstant: 40),
         ])
     }
-    
 }
