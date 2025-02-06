@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
     override func loadView() {
         self.view = self.homeScreen
     }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupNavigationBar()
@@ -40,8 +40,8 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: HomeScreenProtocol {
     func actionSearchButton() {
-        guard let username = homeScreen.usernameTextField.text else { return }
         view.lock()
+        guard let username = homeScreen.usernameTextField.text else { return }
         viewModel.fetchRepository(username: username)
     }
 }
@@ -54,6 +54,7 @@ extension HomeViewController: UITextFieldDelegate {
 
 extension HomeViewController: HomeViewModelDelegate {
     func showAlert(title: String, message: String) {
+        view.unlock()
         UIAlertController.showAlert(on: self, title: title, message: message)
     }
     
