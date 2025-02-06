@@ -12,8 +12,6 @@ class HomeViewController: UIViewController {
     private var homeScreen = HomeScreen()
     private var viewModel: HomeViewModelProtocol
     
-    var repository = [Repository]()
-    
     init(viewModel: HomeViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
