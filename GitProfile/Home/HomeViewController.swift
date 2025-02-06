@@ -10,6 +10,19 @@ import UIKit
 class HomeViewController: UIViewController {
     
     private var homeScreen = HomeScreen()
+    private var viewModel: HomeViewModel
+    
+    var repository = [Repository]()
+    
+    init(viewModel: HomeViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+        viewModel.delegate = self
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         self.view = self.homeScreen
@@ -17,38 +30,20 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupTitle()
+        self.setupNavigationBar()
         self.homeScreen.delegate(delegate: self)
         self.homeScreen.configTextFieldDelegate(delegate: self)
     }
     
-    func setupTitle(){
+    func setupNavigationBar(){
         title = "Git Profile"
     }
 }
 
 extension HomeViewController: HomeScreenProtocol {
     func actionSearchButton() {
-        guard let username = self.homeScreen.usernameTextField.text, !username.trimmingCharacters(in: .whitespaces).isEmpty else {
-            UIAlertController.showAlert(on: self, title: "Atenção", message: "Digite um nome de usuário válido.")
-            return
-        }
-        
-        GitHubService.shared.fetchRepositories(for: username) { result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let repos):
-                    if repos.isEmpty {
-                        UIAlertController.showAlert(on: self, title: "Atenção", message: "Usuário não encontrado ou sem repositórios.")
-                    } else {
-                        let profileVC = ProfileDetailViewController(username: username, urlProfile: repos.first?.owner.avatarUrl ?? "", fullName: repos.first?.owner.login ?? "Sem nome")
-                        self.navigationController?.pushViewController(profileVC, animated: true)
-                    }
-                case .failure:
-                    UIAlertController.showAlert(on: self, title: "Atenção", message: "Erro ao buscar o perfil. Tente novamente.")
-                }
-            }
-        }
+        guard let username = homeScreen.usernameTextField.text else { return }
+        viewModel.fetchRepository(username: username)
     }
 }
 
@@ -56,5 +51,18 @@ extension HomeViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
     }
+}
+
+extension HomeViewController: HomeViewModelDelegate {
+    func showAlert(title: String, message: String) {
+        UIAlertController.showAlert(on: self, title: title, message: message)
+    }
+    
+    func didFetchRepository(_ repository: [Repository]) {
+        let profileVC = ProfileDetailViewController(repository: repository)
+        self.navigationController?.pushViewController(profileVC, animated: true)
+    }
+    
+    
 }
 

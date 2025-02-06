@@ -12,6 +12,11 @@ Interface em ViewCode: A interface do aplicativo foi construída programaticamen
 Swift 5: Linguagem de programação utilizada para o desenvolvimento do aplicativo.
 UIKit: Framework utilizado para construir a interface do usuário.
 
+# Estrutura MVVM
+
+    A estrutura MVVM (Model-View-ViewModel) foi adotada neste projeto por ser a forma mais eficaz de gerenciar as responsabilidades de cada componente. Essa abordagem permite uma maior organização do código. Como resultado, facilita a manutenção e a escalabilidade do projeto.
+
+
 # Dependências
 As dependências do projeto foram gerenciadas com CocoaPods. As principais bibliotecas utilizadas são:
 Alamofire: Para realizar requisições HTTP de forma simplificada.

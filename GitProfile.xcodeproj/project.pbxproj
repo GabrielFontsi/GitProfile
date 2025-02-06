@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33A207DF2D54D57700E30955 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A207DE2D54D57700E30955 /* HomeViewModel.swift */; };
 		33A9BE4E2D53D5E5007EB7E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A9BE4D2D53D5E5007EB7E3 /* AppDelegate.swift */; };
 		33A9BE502D53D5E5007EB7E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A9BE4F2D53D5E5007EB7E3 /* SceneDelegate.swift */; };
 		33A9BE522D53D5E5007EB7E3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A9BE512D53D5E5007EB7E3 /* HomeViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		33A207DE2D54D57700E30955 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		33A9BE4A2D53D5E5007EB7E3 /* GitProfile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitProfile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33A9BE4D2D53D5E5007EB7E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33A9BE4F2D53D5E5007EB7E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			children = (
 				33A9BE512D53D5E5007EB7E3 /* HomeViewController.swift */,
 				33A9BE622D53D682007EB7E3 /* HomeScreen.swift */,
+				33A207DE2D54D57700E30955 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				33A9BE522D53D5E5007EB7E3 /* HomeViewController.swift in Sources */,
 				33A9BE4E2D53D5E5007EB7E3 /* AppDelegate.swift in Sources */,
 				33A9BE7B2D54095E007EB7E3 /* RepositoryTableViewCell.swift in Sources */,
+				33A207DF2D54D57700E30955 /* HomeViewModel.swift in Sources */,
 				33A9BE6B2D53E60A007EB7E3 /* Repository.swift in Sources */,
 				33A9BE742D53F95D007EB7E3 /* TableView + Extension.swift in Sources */,
 				33A9BE682D53D756007EB7E3 /* ProfileDetailScreen.swift in Sources */,
